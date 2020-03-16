@@ -1,5 +1,5 @@
 # RaspberryPi-Setup
 
-```math
+```sh
 sudo passwd root
 ```
