@@ -1,6 +1,16 @@
 # RaspberryPi-Setup
 
-デフォルトユーザー"pi"の名前とパスワードを変えるため、GUIを無効化、設定のための仮ユーザーを作成し、piからログアウトする。<br>
+デフォルトユーザー"pi"の名前とパスワードを変えるため、設定のための仮ユーザーを作成し、GUIを無効化してpiからログアウトする。<br>
+また、CLI画面で日本語が文字化けするので予め日本語フォントをインストールしておく。
+
+    #パッケージリストをアップデート
+    sudo apt-get update
+    
+    #Google製日本語フォント"Noto"をインストール
+    sudo apt-get install fonts-noto
+    
+    #Google製日本語入力パッケージ"mozc"をインストール
+    sudo apt-get install fcitx-mozc
 
     #仮のユーザー"tmp"を作成する
     sudo useradd tmp
