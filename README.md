@@ -24,9 +24,9 @@
 "pi"を"kuma"に変更し、tmpからログアウトする。<br>
 
     #"pi"を"kuma"に変更
-    sudo usermod -l kuma pi
     #この際何やら文字化けだらけの何かが表示されるが、Sudo初回実行時に表示されるメッセージである。
     #tmpのパスワードを入力し進める。
+    sudo usermod -l kuma pi
     
     #ホームディレクトリを変更
     sudo usermod -d /home/kuma -m kuma
