@@ -27,10 +27,13 @@ sudo reboot now
 ```Shell
 #"pi"を"kuma"に変更
 sudo usermod -l kuma pi
+
 #ホームディレクトリを変更
 sudo usermod -d /home/kuma-m kuma
+
 #グループを変更
 sudo groupmod -n kuma pi
+
 #再起動
 sudo reboot
 ```
@@ -41,11 +44,13 @@ sudo reboot
 ```Shell
 #"tmp"を削除
 sudo userdel tmp
+
 #GUI有効化
 sudo raspi-config
 3 Boot Options を選択
 B1 Desktop/CLI を選択
 B4 Desktop Autologin Desktop GUI, automatically logged in as 'pi' user を選択
+
 #sudo使用時にパスワードが必須になるようにする
 sudo rm /etc/sudoers.d/010_pi-nopasswd 
 ```
