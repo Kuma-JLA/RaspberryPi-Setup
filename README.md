@@ -1,6 +1,7 @@
 # RaspberryPi-Setup
 
 デフォルトユーザー"pi"の名前とパスワードを変えるため、GUIを無効化、設定のための仮ユーザーを作成し、piからログアウトする。<br>
+<br>
 ```
 #GUI無効化
 sudo raspi-config
@@ -24,6 +25,7 @@ sudo reboot now
 <br>
 作成したtmpでログインする。<br>
 "pi"を"kuma"に変更し、tmpからログアウトする。<br>
+<br>
 ```
 #"pi"を"kuma"に変更
 sudo usermod -l kuma pi
@@ -41,6 +43,7 @@ sudo reboot
 変更したした"kuma"でログインする。<br>
 パスワードは初期設定にて設定した"pi"のパスワード。<br>
 仮ユーザーの削除とGUI有効化、sudo使用時のパスワード必須化を行う。<br>
+<br>
 ```
 #"tmp"を削除
 sudo userdel tmp
