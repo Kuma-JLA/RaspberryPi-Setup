@@ -1,16 +1,6 @@
 # RaspberryPi-Setup
 
 デフォルトユーザー"pi"の名前とパスワードを変えるため、設定のための仮ユーザーを作成し、GUIを無効化してpiからログアウトする。<br>
-また、CLI画面で日本語が文字化けするので予め日本語フォントをインストールしておく。
-
-    #パッケージリストをアップデート
-    sudo apt-get update
-    
-    #Google製日本語フォント"Noto"をインストール
-    sudo apt-get install fonts-noto
-    
-    #Google製日本語入力パッケージ"mozc"をインストール
-    sudo apt-get install fcitx-mozc
 
     #仮のユーザー"tmp"を作成する
     sudo useradd tmp
@@ -35,9 +25,11 @@
 
     #"pi"を"kuma"に変更
     sudo usermod -l kuma pi
+    #この際何やら文字化けだらけの何かが表示されるが、Sudo初回実行時に表示されるメッセージである。
+    #tmpのパスワードを入力し進める。
     
     #ホームディレクトリを変更
-    sudo usermod -d /home/kuma-m kuma
+    sudo usermod -d /home/kuma -m kuma
     
     #グループを変更
     sudo groupmod -n kuma pi
@@ -46,9 +38,9 @@
     sudo reboot
 
 <br>
-変更したした"kuma"でログインする。<br>
+変更が完了した"kuma"でログインする。<br>
 パスワードは初期設定にて設定した"pi"のパスワード。<br>
-仮ユーザーの削除とGUI有効化、sudo使用時のパスワード必須化を行う。<br>
+仮ユーザーを削除しGUIも有効化する。<br>
 
     #"tmp"を削除
     sudo userdel tmp
@@ -58,6 +50,20 @@
     3 Boot Options を選択
     B1 Desktop/CLI を選択
     B4 Desktop Autologin Desktop GUI, automatically logged in as 'pi' user を選択
+    再起動
+
+<br>
+儀式を執り行う。<br>
+少々時間がかかるので注意。<br>
+
+    #パッケージリストをアップデート
+    sudo apt-get update
     
-    #sudo使用時にパスワードが必須になるようにする
-    sudo rm /etc/sudoers.d/010_pi-nopasswd 
+    #パッケージをアップデート
+    sudo apt-get upgrade
+    
+    #Google製日本語フォント"Noto"をインストール
+    sudo apt-get install fonts-noto
+    
+    #Google製日本語入力パッケージ"mozc"をインストール
+    sudo apt-get install fcitx-mozc
