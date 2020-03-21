@@ -2,13 +2,6 @@
 
 デフォルトユーザー"pi"の名前とパスワードを変えるため、GUIを無効化、設定のための仮ユーザーを作成し、piからログアウトする。<br>
 
-    #GUI無効化
-    sudo raspi-config
-    3 Boot Options を選択
-    B1 Desktop/CLI を選択
-    B1 Console Text console, requiring user to login  を選択
-    ここでは再起動せずに設定を続ける。
-    
     #仮のユーザー"tmp"を作成する
     sudo useradd tmp
     
@@ -18,8 +11,13 @@
     #tmpのパスワードを設定
     sudo passwd tmp
 
-    #再起動
-    sudo reboot now
+    #GUI無効化
+    sudo raspi-config
+    3 Boot Options を選択
+    B1 Desktop/CLI を選択
+    B1 Console Text console, requiring user to login  を選択
+    Finish を選択
+    再起動する。
     
 <br>
 作成したtmpでログインする。<br>
