@@ -50,6 +50,8 @@
     3 Boot Options を選択
     B1 Desktop/CLI を選択
     B4 Desktop Autologin Desktop GUI, automatically logged in as 'pi' user を選択
+    7 Advanced Options を選択
+    A1 Expand Filesysten を選択
     再起動
 
 <br>
