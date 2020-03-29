@@ -1,7 +1,6 @@
 # RaspberryPi-Setup
 こちらは余分な説明を抜いたバリカタバージョンです。<br>
-Elchikaにはさらにわかりやすく解説したゆるふわバージョンも投稿しましたので是非。<br>
-https://elchika.com/article/b0258599-8df9-4017-9490-70ca8c33de5c <br>
+[ElchikaにはRaspbianインストールからわかりやすく解説したゆるふわバージョンも投稿しましたので是非。](https://elchika.com/article/b0258599-8df9-4017-9490-70ca8c33de5c)
 <br>
 <br>
 ## "pi"の名前とパスワードを変える
