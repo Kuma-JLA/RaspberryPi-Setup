@@ -1,5 +1,10 @@
 # RaspberryPi-Setup
-
+こちらは余分な説明を抜いたバリカタバージョンです。<br>
+Elchikaにはさらにわかりやすく解説したゆるふわバージョンも投稿しましたので是非。<br>
+https://elchika.com/article/b0258599-8df9-4017-9490-70ca8c33de5c <br>
+<br>
+<br>
+## "pi"の名前とパスワードを変える
 デフォルトユーザー"pi"の名前とパスワードを変えるため、設定のための仮ユーザーを作成し、GUIを無効化してpiからログアウトする。<br>
 
     #仮のユーザー"tmp"を作成する
@@ -54,8 +59,8 @@
     A1 Expand Filesysten を選択
     再起動
 
-<br>
-儀式を執り行う。<br>
+
+## 儀式を執り行う。
 少々時間がかかるので注意。<br>
 
     #パッケージリストをアップデート
@@ -69,3 +74,52 @@
     
     #Google製日本語入力パッケージ"mozc"をインストール
     sudo apt-get install fcitx-mozc
+
+
+## SSH/VNC/SPI/I2C/Serial を有効化する。
+
+    sudo raspi-config
+    5 Interfacing Options を選択
+    P2 SSH を選択
+    「はい」を選択
+    P3,P4,P5,P6も同様に選択
+    再起動
+    
+
+## SSH/VNCのポート番号変更
+
+    sudo nano /etc/ssh/sshd_config
+
+    #Port 22
+    ↓
+    Port 59090(任意のポート番号に変更してください) 
+    
+画面右上、RealVNC Serverアイコンをクリックし、表示されたウィンドウの右上の三本線ボタンをクリック、メニューよりOptionsを開く。<br>
+表示されたウィンドウ左側の"Conections"を選択すると、右側に"Port:5900"という欄が見つかる。<br>
+この"5900"を任意のポート番号に変更する。<br>
+<br>
+
+## ファイヤーウォールを設定する。<br>
+まずufwをインストール。<br>
+
+    sudo apt-get install ufw
+    
+ポートを開放するには以下のコマンドを使う。
+
+    sudo ufw allow xxxxx(ポート番号)
+    
+(例)SSHに指定した"59090"を開放。
+
+    sudo ufw allow 59090
+    
+ファイヤーウォールを有効化する。
+
+    sudo ufw enable
+    
+ファイヤーウォールのルールをリロードする。(Piとファイヤーウォールをを起動させたまま開放ポートを追加した後などに使う。)
+
+    sudo ufw reload
+
+解放されているポートを確認する。
+
+    sudo ufw status
