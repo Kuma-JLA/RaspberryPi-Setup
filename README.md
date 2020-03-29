@@ -88,12 +88,14 @@ https://elchika.com/article/b0258599-8df9-4017-9490-70ca8c33de5c <br>
 
 ## SSH/VNCのポート番号変更
 
-    sudo nano /etc/ssh/sshd_config
+### SSH
+    sudo nano / etc / ssh / sshd_config
 
     #Port 22
     ↓
     Port 59090(任意のポート番号に変更してください) 
-    
+
+### VNC
 画面右上、RealVNC Serverアイコンをクリックし、表示されたウィンドウの右上の三本線ボタンをクリック、メニューよりOptionsを開く。<br>
 表示されたウィンドウ左側の"Conections"を選択すると、右側に"Port:5900"という欄が見つかる。<br>
 この"5900"を任意のポート番号に変更する。<br>
