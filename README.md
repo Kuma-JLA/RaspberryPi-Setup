@@ -88,7 +88,7 @@
 ## SSH/VNCのポート番号変更
 
 ### SSH
-    sudo nano / etc / ssh / sshd_config
+    sudo nano /etc/ssh/sshd_config
 
     #Port 22
     ↓
