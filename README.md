@@ -73,6 +73,9 @@
     
     #Google製日本語入力パッケージ"mozc"をインストール
     sudo apt-get install fcitx-mozc
+    
+    #git準備
+    sudo apt-get install git
 
 
 ## SSH/VNC/SPI/I2C/Serial を有効化する。
